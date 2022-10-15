@@ -3,7 +3,9 @@ import defaultimage from '../images/default.png'
 export default function Meme() {
   const [meme, setmeme] = useState(defaultimage);
   const [text,settext]=useState({toptext:"",bottomtext:""})
-  const[allmemes,setallmemes]=useState()
+  const[allmemes,setallmemes]=useState();
+
+  
   useEffect(() => { 
     fetch("https://api.imgflip.com/get_memes")
     .then(res => res.json()).then(data => setallmemes(data)) 
